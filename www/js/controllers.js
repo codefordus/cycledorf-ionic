@@ -1,6 +1,11 @@
 angular.module('starter.controllers', [])
 
 .controller('MapCtrl', function($scope, $ionicLoading) {
+  $scope.play = false;
+  $scope.tracking = function(button){
+
+  }
+
   $scope.mapCreated = function(map) {
     $scope.map = map;
   };

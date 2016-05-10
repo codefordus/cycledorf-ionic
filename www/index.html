@@ -18,7 +18,7 @@
 
     <script src="js/leaflet-src.js"></script>
     <script src="js/firebase.js"></script>
-    
+
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -39,6 +39,8 @@
 
     <ion-footer-bar class="bar-stable">
       <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate"></a>
+      <a ng-click="play=!play" class="button button-icon icon {'ion-play': play, 'ion-stop': !play}"></a>
+      <!-- {'icon ion-ios7-heart': liked, 'icon ion-ios7-heart-outline': !liked}" ng-click="liked=!liked" -->
     </ion-footer-bar>
   </body>
 </html>
