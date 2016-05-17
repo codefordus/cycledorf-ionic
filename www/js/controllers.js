@@ -43,8 +43,9 @@ angular.module('starter.controllers', [])
 
   function geoSuccess(pos) {
     console.log("[GEO]New Data!"); // DEBUG
+    console.info(pos);
     if (pos.coords.accuracy > 80) { // only nodes with accuracy 80 meters or lower are accepted
-      console.warn("[GEO]Accuracy too low!"); // DEBUG
+      console.log("[GEO]Accuracy too low!"); // DEBUG
     } else {
       current_track.push({ acc: pos.coords.accuracy, lat: pos.coords.latitude, lon: pos.coords.longitude, timestamp: Math.floor(new Date().getTime() / 1000) });
       var len = current_track.length;
@@ -74,7 +75,8 @@ angular.module('starter.controllers', [])
 
   $scope.status = "Start";
   function time_now() {
-    $scope.timer += 1;
+    current_track_duration += 1;
+    $scope.timer = current_track_duration;
   };
 
   $scope.start = function() {
@@ -97,10 +99,9 @@ angular.module('starter.controllers', [])
       console.log("[GPS]Tracking stopped!");
       currently_tracking = false;
       if (current_track.length >= 2) { //Check if track has two or more nodes
-          var dur = Math.floor(new Date((new Date(current_track[current_track.length - 1].timestamp).getTime()) - (new Date(current_track[0].timestamp).getTime())).getTime());
-          fireBaseTracks.push({ data: current_track, distance: current_track_distance, start_time: current_track[0].timestamp, end_time: current_track[current_track.length - 1].timestamp, duration: dur });
+          fireBaseTracks.push({ data: current_track, distance: current_track_distance, start_time: current_track[0].timestamp, end_time: current_track[current_track.length - 1].timestamp, duration: current_track_duration });
           fireBaseStatsTime.transaction(function (curTime) {
-              return curTime + dur;
+              return curTime + current_track_duration;
           });
           fireBaseStatsTracks.transaction(function (curTracks) {
               return curTracks + 1;
