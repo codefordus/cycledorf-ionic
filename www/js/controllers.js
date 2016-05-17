@@ -47,6 +47,7 @@ angular.module('starter.controllers', [])
     if (pos.coords.accuracy > 80) { // only nodes with accuracy 80 meters or lower are accepted
       console.log("[GEO]Accuracy too low!"); // DEBUG
     } else {
+      $scope.map.setView(L.latLng(pos.coords.latitude, pos.coords.longitude));
       current_track.push({ acc: pos.coords.accuracy, lat: pos.coords.latitude, lon: pos.coords.longitude, timestamp: Math.floor(new Date().getTime() / 1000) });
       var len = current_track.length;
       if (len > 1) {
