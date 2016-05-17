@@ -5,6 +5,7 @@ angular.module('starter.directives', [])
     restrict: 'E',
     scope: {
       onCreate: '&'
+      
     },
     link: function ($scope, $element, $attr) {
       function initialize() {
@@ -26,6 +27,10 @@ angular.module('starter.directives', [])
       } else {
         L.DomEvent.addListener(window, 'load', initialize);
       }
+    
+    
     }
+    
+    
   }
 });

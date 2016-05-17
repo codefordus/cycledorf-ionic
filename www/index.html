@@ -9,7 +9,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/leaflet.css" rel="stylesheet">
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+ <!--   <! IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
@@ -32,14 +32,19 @@
     <ion-header-bar class="bar-stable">
       <h1 class="title">Map</h1>
     </ion-header-bar>
-
+    
     <ion-content scroll="false">
       <map on-create="mapCreated(map)"></map>
+  <div>
+    {{ timer }}<br>
+    <button ng-click="start()">{{ status }}</button>
+  </div>
     </ion-content>
 
+    
     <ion-footer-bar class="bar-stable">
       <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate"></a>
-      <a ng-click="play=!play" class="button button-icon icon {'ion-play': play, 'ion-stop': !play}"></a>
+      <a ng-click="play=!play" class="button button-icon icon {&apos;ion-play&apos;: play, &apos;ion-stop&apos;: !play}"></a>
       <!-- {'icon ion-ios7-heart': liked, 'icon ion-ios7-heart-outline': !liked}" ng-click="liked=!liked" -->
     </ion-footer-bar>
   </body>
