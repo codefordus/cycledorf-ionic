@@ -1,45 +1,37 @@
 angular.module('starter.controllers', [])
 
 .controller('MapCtrl', function($scope, $interval, $ionicLoading) {
-  $scope.play = false;
-  $scope.tracking = function(button){
-  
-  }
-  
-	$scope.timer = 0;
-    var clickme = true,
-        startfun;
-    $scope.status = "Start";
-    var foo = function() {
-        $scope.timer += 1;
-   
-   };
-   
-   $scope.start = function() {
-	   if (clickme === true) {
-	   	   $scope.timer = 0;
-	       $scope.status = "Stop";
-	       clickme = false;
-	       startfun = $interval(foo, 1000);
+  $scope.timer = 0;
+  var clickme = true;
+  var startfun = null;
 
-	   } else if (clickme === false) {
-	       clickme = true;
-	       $interval.cancel(startfun);
-	       $scope.status = "Start";
-	   }
-   
-   
-    };
+  $scope.status = "Start";
+  var inter = function() {
+    $scope.timer += 1;
+  };
+
+  $scope.start = function() {
+    if (clickme === true) {
+      $scope.timer = 0;
+      $scope.status = "Stop";
+      clickme = false;
+      startfun = $interval(foo, 1000);
+    } else if (clickme === false) {
+      clickme = true;
+      $interval.cancel(startfun);
+      $scope.status = "Start";
+    }
+  };
   $scope.reset=function(){
-      
+
       $interval.cancel(startfun);
       $scope.timer = 0;
       $scope.status = "Start";
       clickme = true;
-      
- };
- 
-  
+
+  };
+
+
   $scope.mapCreated = function(map) {
     $scope.map = map;
   };
