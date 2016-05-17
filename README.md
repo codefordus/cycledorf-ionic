@@ -7,6 +7,7 @@ CycleDorf als App wird mit Ionic realisiert werden. Die App pusht dann Anonym Da
 * [Ionic](http://ionicframework.com/)
 * [FireBase](http://firebase.com/)
 * [CycleDorf](http://cycledorf.de/)
+
 ## Devs
 * [Khalid Karroumi](https://github.com/KCoderX) - Frontend / UI
 * [Max Schorradt](https://github.com/Mechtecs) - Backend
