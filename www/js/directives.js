@@ -5,7 +5,7 @@ angular.module('starter.directives', [])
     restrict: 'E',
     scope: {
       onCreate: '&'
-      
+
     },
     link: function ($scope, $element, $attr) {
       function initialize() {
@@ -15,7 +15,7 @@ angular.module('starter.directives', [])
         };
         var map = L.map($element[0], mapOptions);
 
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+        L.tileLayer('http://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png').addTo(map);
 
         $scope.onCreate({map: map});
 
@@ -27,10 +27,10 @@ angular.module('starter.directives', [])
       } else {
         L.DomEvent.addListener(window, 'load', initialize);
       }
-    
-    
+
+
     }
-    
-    
+
+
   }
 });
