@@ -1,18 +1,43 @@
 /* Empty. Add your own CSS if you like */
 
-	
+button.button.ng-binding.disable-user-behavior {
+	width: 111mm;
+	position: relative;
+	top: 9mm;
+}
+/*
+a.button.button-icon.icon-left.ion-navigate.disable-user-behavior {
+	position: relative;
+	right: 130.1mm;
+	bottom: 15.8mm;
+}*/
+
+img {
+	position: relative;
+	display: block;
+	right: 107.5mm;
 }
 
-button.disable-user-behavior {
-	display: block;
-	width: 100%;
-	height: 57%;
+ion-header-bar.bar-stable.bar.bar-header {
+	left: 107.5mm;
+}
+
+span.input-label {
+	right: 100mm;
+}
+
+label.toggle {
+	position: relative;
+	left: 32mm;
 }
 
 div.ng-binding {
 	display: block;
 	width: 100%;
 	height: 57%;
+	text-align: center;
+	font-size: 31px;
+	position: relative;
 }
 
 map {
