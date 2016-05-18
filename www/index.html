@@ -35,12 +35,11 @@
 
   <body ng-app="starter" ng-controller="MapCtrl">
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Map</h1>
  	  <img src="img/CycleDorf.svg">
      </ion-header-bar>
     <ion-content scroll="false">
       <map on-create="mapCreated(map)"></map>
-      <div class="list">
+   <!--   <div class="list">
         <label class="item item-input">
           <span class="input-label">Start</span>
           <input type="text">
@@ -49,12 +48,12 @@
           <span class="input-label">Ziel</span>
           <input type="text">
         </label>
-      </div>
+      </div>-->
       <ion-floating-menu>
           <ion-floating-item icon="ion-camera" click="myEvent()"></ion-floating-item>
           <ion-floating-item icon="ion-person" click="myEvent()"></ion-floating-item>
       </ion-floating-menu>
-      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate"></a>
+     <!-- <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate"></a>-->
      <!-- <ion-searchbar
         [(ngModel)]="myInput"
         [hideCancelButton]="shouldHideCancel"

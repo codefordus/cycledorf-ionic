@@ -4,6 +4,7 @@ button.button.ng-binding.disable-user-behavior {
 	width: 111mm;
 	position: relative;
 	top: 9mm;
+	right: 14.9mm;
 }
 /*
 a.button.button-icon.icon-left.ion-navigate.disable-user-behavior {
@@ -38,6 +39,7 @@ div.ng-binding {
 	text-align: center;
 	font-size: 31px;
 	position: relative;
+	top: 7mm;
 }
 
 map {
