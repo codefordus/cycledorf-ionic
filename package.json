@@ -1,7 +1,7 @@
 {
   "name": "cycledorf",
   "version": "1.1.1",
-  "description": "CycleDorf: An Ionic project",
+  "description": "CycleDorf",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-concat": "^2.2.0",
@@ -23,5 +23,7 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [
+    "android"
+  ]
 }

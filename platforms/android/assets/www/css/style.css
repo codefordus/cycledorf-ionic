@@ -1,0 +1,25 @@
+/* Empty. Add your own CSS if you like */
+
+	
+}
+
+button.disable-user-behavior {
+	display: block;
+	width: 100%;
+	height: 57%;
+}
+
+div.ng-binding {
+	display: block;
+	width: 100%;
+	height: 57%;
+}
+
+map {
+  display: block;
+  width: 100%;
+  height: 60%;
+}
+.scroll {
+  height: 78%;
+}

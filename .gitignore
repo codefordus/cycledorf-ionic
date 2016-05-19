@@ -1,7 +1,31 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
-node_modules/
-platforms/
-plugins/
+# Common (mac)
+.vscode/
+.DS_Store
 cycledorf-ionic.esproj/
+cycledorf-ionic-old.esproj/
+
+# Ionic
+
+node_modules/
+plugins/
+
+# ios
+
+*.mode1v3
+*.perspectivev3
+*.pbxuser
+platforms/ios/build
+
+# android
+
+platforms/android/build.xml
+platforms/android/local.properties
+platforms/android/gradlew
+platforms/android/gradlew.bat
+platforms/android/gradle
+
+#gradle
+platforms/android/build
