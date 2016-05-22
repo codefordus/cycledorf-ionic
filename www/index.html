@@ -34,44 +34,14 @@
   </head>
 
   <body ng-app="starter" ng-controller="MapCtrl">
-    <ion-header-bar class="bar-stable">
- 	  <img src="img/CycleDorf.svg">
+    <ion-header-bar class="bar bar-header bar-assertive">
+ 	  <h1 class="title">CycleDorf</h1>
      </ion-header-bar>
     <ion-content scroll="false">
       <map on-create="mapCreated(map)"></map>
-   <!--   <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Start</span>
-          <input type="text">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Ziel</span>
-          <input type="text">
-        </label>
-      </div>-->
-      <ion-floating-menu>
-          <ion-floating-item icon="ion-camera" click="myEvent()"></ion-floating-item>
-          <ion-floating-item icon="ion-person" click="myEvent()"></ion-floating-item>
-      </ion-floating-menu>
-     <!-- <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate"></a>-->
-     <!-- <ion-searchbar
-        [(ngModel)]="myInput"
-        [hideCancelButton]="shouldHideCancel"
-        (input)="onInput($event)"
-        (cancel)="onCancel($event)">
-      </ion-searchbar>-->
-  <div>
+    <div>
    {{ timer }}<br>
-    <button ng-click="start()" class="button ">{{ status }} 
+    <button ng-click="start()" class="button button-full button-assertive">{{ status }} 
     </button>
   </div>
-    </ion-content>
-    
-    <!--<ion-footer-bar class="bar-stable">
-    
-<!-      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate"></a>-*>
-      <a ng-click="play=!play" class="button button-icon icon {&apos;ion-play&apos;: play, &apos;ion-stop&apos;: !play}"></a>
-      <!- {'icon ion-ios7-heart': liked, 'icon ion-ios7-heart-outline': !liked}" ng-click="liked=!liked" -*>
-    </ion-footer-bar>
-  </body>-->
-</body></html>
+ </ion-content></body></html>

@@ -1,35 +1,13 @@
 /* Empty. Add your own CSS if you like */
 
-button.button.ng-binding.disable-user-behavior {
-	width: 111mm;
-	position: relative;
-	top: 9mm;
-	right: 14.9mm;
 }
-/*
-a.button.button-icon.icon-left.ion-navigate.disable-user-behavior {
-	position: relative;
-	right: 130.1mm;
-	bottom: 15.8mm;
-}*/
+
 
 img {
-	position: relative;
-	display: block;
-	right: 107.5mm;
-}
+	width: 100%;
+	height: auto;
+	
 
-ion-header-bar.bar-stable.bar.bar-header {
-	left: 107.5mm;
-}
-
-span.input-label {
-	right: 100mm;
-}
-
-label.toggle {
-	position: relative;
-	left: 32mm;
 }
 
 div.ng-binding {
@@ -39,14 +17,26 @@ div.ng-binding {
 	text-align: center;
 	font-size: 31px;
 	position: relative;
-	top: 7mm;
+	top: 23mm;
+	background-color: #ffffff;
+}
+
+button.button.button-full.button-calm.ng-binding.disable-user-behavior {
+	background-color: #2196F3;
+}
+
+ion-header-bar.bar.bar-header.bar-calm {
+	background-color: #2196F3;
 }
 
 map {
   display: block;
   width: 100%;
   height: 60%;
+
 }
+
+
 .scroll {
   height: 78%;
 }
