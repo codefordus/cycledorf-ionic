@@ -24,17 +24,6 @@ div.ng-binding {
 
 }
 
-.box{
-	width:600px; height:100px;
-    border:solid 20px #000;
-    border-color:#6ad6fb transparent ;
-	position: relative;
-	left: auto;
-	right: 22px;
-	z-index: auto;
-	top: 40px;
-}
-
 button.button.button-clear.button-rounded.ng-binding.disable-user-behavior {
    	   width: 5%;
    	   height: 900px;
@@ -48,8 +37,8 @@ button.button.button-clear.button-rounded.ng-binding.disable-user-behavior {
 	   color: #fbfbfb;
 	   font-weight: bold;
 	   font-size: 15px;
-	   right: 30.5mm;
-	   top: 1.3mm;
+	   right: auto;
+	   top: 10mm;
 }
 
 ion-header-bar.bar.bar-header.bar-assertive {
