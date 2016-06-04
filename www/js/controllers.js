@@ -114,7 +114,7 @@ angular.module('starter.controllers', [])
     }
   };
 
-  $scope.reset=function(){
+  $scope.reset = function(){
       $interval.cancel(startfun);
       $scope.timer = 0;
       $scope.status = "Start";
