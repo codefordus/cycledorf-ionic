@@ -114,7 +114,7 @@ angular.module('starter.controllers', [])
     }
   };
 
-  $scope.reset=function(){
+  $scope.reset = function(){
       $interval.cancel(startfun);
       $scope.timer = 0;
       $scope.status = "Start";
@@ -123,6 +123,9 @@ angular.module('starter.controllers', [])
 
   $scope.mapCreated = function(map) {
     $scope.map = map;
+    navigator.geolocation.getCurrentPosition(function(pos) {
+      $scope.map.setView(L.latLng(pos.coords.latitude, pos.coords.longitude));
+    });
   };
 
   $scope.centerOnMe = function () {
