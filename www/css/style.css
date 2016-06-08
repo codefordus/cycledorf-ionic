@@ -22,11 +22,9 @@ div.ng-binding {
 
 	
 
-}
+/*}
 
 button.button.button-clear.button-rounded.ng-binding.disable-user-behavior {
-   	   width: 5%;
-   	   height: 900px;
    	   -moz-border-radius: 100%; 
    	   -webkit-border-radius: 100%; 
    	   border-radius: 100%;
@@ -36,13 +34,21 @@ button.button.button-clear.button-rounded.ng-binding.disable-user-behavior {
    	   overflow: hidden;
 	   color: #fbfbfb;
 	   font-weight: bold;
-	   font-size: 15px;
 	   right: auto;
 	   top: 10mm;
+	   padding: auto;
+	   font-size: auto;*/
+	   
+}
+
+img.disable-user-behavior {
+	position: relative;
+	top: 10%;
+	right: 3%;
 }
 
 ion-header-bar.bar.bar-header.bar-assertive {
-	background: #6ad6fb;
+	background: #ca232c;
 }
 
 map {
