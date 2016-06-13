@@ -30,3 +30,6 @@ platforms/android/gradle
 
 #gradle
 platforms/android/build
+
+#test
+platforms/
