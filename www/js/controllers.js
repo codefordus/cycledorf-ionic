@@ -14,6 +14,7 @@ angular.module('starter.controllers', [])
   $scope.firedb_tracks = 0;
   $scope.firedb_time = 0;
   $scope.firedb_driven = 0;
+  
   // Track-vars
   var current_track = [];
   var current_track_watch = null;
