@@ -4,18 +4,20 @@ angular.module('starter.controllers', [])
   $scope.timer = 0;
   var clickme = true;
 
+  var first = true;
+
   // FireBase-vars
   var fireBase = null;
   var fireBaseTracks = null;
   var fireBaseStats = null;
-  var fireBaseStatsDriven = null;
-  var fireBaseStatsTime = null;
-  var fireBaseStatsTracks = null;
 
+  $scope.firedb_tracks = 0;
+  $scope.firedb_time = 0;
+  $scope.firedb_driven = 0;
   // Track-vars
   var current_track = [];
   var current_track_watch = null;
-  var current_track_distance = 0;
+  $scope.current_track_distance = 0;
   var current_track_last_time = 0;
   var current_track_duration = 0;
   var current_track_duration_interval = null;
@@ -32,16 +34,23 @@ angular.module('starter.controllers', [])
         console.info("[FB]Child 'tracks' added!");
         fireBaseStats = fireBase.child("stats");
         console.info("[FB]Child 'stats' added!");
-        fireBaseStatsDriven = fireBaseStats.child("total_driven");
-        console.info("[FB]Child 'stats.total_driven' added!");
-        fireBaseStatsTime = fireBaseStats.child("total_time");
-        console.info("[FB]Child 'stats.total_time' added!");
-        fireBaseStatsTracks = fireBaseStats.child("total_tracks");
-        console.info("[FB]Child 'stats.total_tracks' added!");
+        fireBaseStats.on("value", function(data){
+          console.log("got stats");
+          c = data.exportVal();
+          $scope.$apply(function() {
+            $scope.firedb_tracks = c["total_tracks"];
+            $scope.firedb_time = c["total_time"];
+            $scope.firedb_driven = c["total_driven"];
+          });
+        });
       }
   });
 
   function geoSuccess(pos) {
+    if(first){
+      first = false;
+      return;
+    }
     console.log("[GEO]New Data!"); // DEBUG
     console.info(pos);
     if (pos.coords.accuracy > 80) { // only nodes with accuracy 80 meters or lower are accepted
@@ -54,7 +63,7 @@ angular.module('starter.controllers', [])
         curDistance = getDistance(current_track[len - 1].lat, current_track[len - 1].lon, current_track[len - 2].lat, current_track[len - 2].lon);
 
         // STATS
-        current_track_distance += curDistance;
+        $scope.current_track_distance += curDistance;
         fireBaseStatsDriven.transaction(function (curData) {
           return curData + curDistance;
         });
@@ -89,7 +98,7 @@ angular.module('starter.controllers', [])
       $scope.status = "Stop";
 
       current_track = [];
-      current_track_distance = 0;
+      $scope.current_track_distance = 0;
       current_track_duration = 0;
       current_track_duration_interval = $interval(time_now, 1000);
       current_track_watch = navigator.geolocation.watchPosition(geoSuccess, geoError, {frequency: 2000, enableHighAccuracy: true});
@@ -100,7 +109,7 @@ angular.module('starter.controllers', [])
       console.log("[GPS]Tracking stopped!");
       currently_tracking = false;
       if (current_track.length >= 2) { //Check if track has two or more nodes
-          fireBaseTracks.push({ data: current_track, distance: current_track_distance, start_time: current_track[0].timestamp, end_time: current_track[current_track.length - 1].timestamp, duration: current_track_duration });
+          fireBaseTracks.push({ data: current_track, distance: $scope.current_track_distance, start_time: current_track[0].timestamp, end_time: current_track[current_track.length - 1].timestamp, duration: current_track_duration });
           fireBaseStatsTime.transaction(function (curTime) {
               return curTime + current_track_duration;
           });
