@@ -41,7 +41,11 @@
       <map on-create="mapCreated(map)"></map>
       <div>
         {{ timer }}<br>
-          <img ng-click="start()" src="./img/Button.png">{{ status }} 
+        {{ current_track_distance }}<br>
+        {{ firedb_tracks }}<br>
+        {{ firedb_time }}<br>
+        {{ firedb_driven }}<br>
+          <img ng-click="start()" src="./img/Button.png">{{ status }}
           </button>
         </div>
       </div>
