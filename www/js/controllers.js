@@ -14,10 +14,11 @@ angular.module('starter.controllers', [])
   $scope.firedb_tracks = 0;
   $scope.firedb_time = 0;
   $scope.firedb_driven = 0;
-  
+
   // Track-vars
   var current_track = [];
   var current_track_watch = null;
+  var current_track_distance = 0;
   $scope.current_track_distance = 0;
   var current_track_last_time = 0;
   var current_track_duration = 0;
@@ -41,7 +42,7 @@ angular.module('starter.controllers', [])
           $scope.$apply(function() {
             $scope.firedb_tracks = c["total_tracks"];
             $scope.firedb_time = c["total_time"];
-            $scope.firedb_driven = c["total_driven"];
+            $scope.firedb_driven = Math.round(parseFloat(c["total_driven"])*100)/100;
           });
         });
       }
@@ -64,7 +65,8 @@ angular.module('starter.controllers', [])
         curDistance = getDistance(current_track[len - 1].lat, current_track[len - 1].lon, current_track[len - 2].lat, current_track[len - 2].lon);
 
         // STATS
-        $scope.current_track_distance += curDistance;
+        current_track_distance += curDistance;
+        $scope.current_track_distance += Math.round(parseFloat(current_track_distance)*100)/100;
         fireBaseStatsDriven.transaction(function (curData) {
           return curData + curDistance;
         });
@@ -78,7 +80,7 @@ angular.module('starter.controllers', [])
   }
 
   function geoError(e) {
-      geolocation.clearWatch(current_track_watch);
+      navigator.geolocation.clearWatch(current_track_watch);
       $interval.cancel(current_track_duration_interval);
       currently_tracking = false;
       console.error(e);
@@ -99,6 +101,7 @@ angular.module('starter.controllers', [])
       $scope.status = "Stop";
 
       current_track = [];
+      current_track_distance = 0;
       $scope.current_track_distance = 0;
       current_track_duration = 0;
       current_track_duration_interval = $interval(time_now, 1000);
@@ -110,7 +113,7 @@ angular.module('starter.controllers', [])
       console.log("[GPS]Tracking stopped!");
       currently_tracking = false;
       if (current_track.length >= 2) { //Check if track has two or more nodes
-          fireBaseTracks.push({ data: current_track, distance: $scope.current_track_distance, start_time: current_track[0].timestamp, end_time: current_track[current_track.length - 1].timestamp, duration: current_track_duration });
+          fireBaseTracks.push({ data: current_track, distance: current_track_distance, start_time: current_track[0].timestamp, end_time: current_track[current_track.length - 1].timestamp, duration: current_track_duration });
           fireBaseStatsTime.transaction(function (curTime) {
               return curTime + current_track_duration;
           });
