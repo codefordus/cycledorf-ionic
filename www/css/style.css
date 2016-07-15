@@ -1,42 +1,86 @@
 /* Empty. Add your own CSS if you like */
 
+button.ng-binding.disable-user-behavior {
+	text-align: center;
+	width: 100%;
+	border-style: solid;
+
+}
+div.col1.ng-binding{
+	background:#DCECFC;
+	border-radius: 5%;
+	padding: inherit;
+	font-size: 35px;
+	margin-right: 1.5mm;
 }
 
+i.fa.fa-clock-o{
+	font-size: 25px;
+}
+
+div.col2.ng-binding {
+	background:#85C1E9;
+	padding: inherit;
+	border-radius: 5%;
+	font-size: 35px;
+
+}
+
+i.fa.fa-road{
+	font-size: 25px;
+}
+
+div.col3.ng-binding {
+	background: #ECFCDC;
+	padding: inherit;
+ 	border-radius: 5%;
+	font-size: 35px;
+	margin-right: 1.5mm;
+}
+
+i.fa.fa-bicycle{
+	font-size: 25px;
+}
+
+
+div.col4.ng-binding {
+	background:#82E0AA;
+	padding: inherit;
+	border-radius: 5%;
+	font-size: 35px;
+
+}
+
+i.fa.fa-globe{
+	font-size: 25px;
+}
 
 img {
 	width: 100%;
 	height: auto;
-	
+
 
 }
 
 div.ng-binding {
 	display: block;
 	width: 100%;
-	height: 57%;
+	height: 40%;
 	text-align: center;
-	font-size: 31px;
-	position: relative;
-	top: 25mm;
-	background-color: #ffffff;
-
-	
+	font-size: 35px;
+	top: 20%;
+	padding-top: 30px;
 }
 
 img.disable-user-behavior {
-	position: relative;
 	top: 10%;
 	right: 3%;
-}
-
-ion-header-bar.bar.bar-header.bar-assertive {
-	background: #ca232c;
 }
 
 map {
   display: block;
   width: 100%;
-  height: 60%;
+  height: 85%;
 
 }
 
