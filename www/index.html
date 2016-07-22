@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
+
  <!--   <! IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
@@ -46,8 +47,6 @@
           <i class="fa fa-road"></i>
         </div>
       </div>
-      <button ng-click="start()">{{ status }}
-      </button>
       <div class = "row">
         <div class = "col3">{{firedb_tracks}}
           <i class="fa fa-bicycle"></i>
@@ -55,6 +54,9 @@
         <div class = "col4">{{firedb_time}}
           <i class="fa fa-globe"></i>
         </div>
+      </div>
+      <button ng-click="start()">{{ status }}
+      </button>
     </ion-content>
   </body>
 </html>

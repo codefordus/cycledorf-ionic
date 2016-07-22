@@ -1,17 +1,28 @@
 /* Empty. Add your own CSS if you like */
 
+ion-content.scroll-content {
+background-color: #DCDCDC;
+}
+
+
 button.ng-binding.disable-user-behavior {
-	text-align: center;
-	width: 100%;
-	border-style: solid;
+	width: 40%;
+	font-size: 25px;
+	border-style: inherit;
+	border-radius: 10%;
+	margin-left: 30%;
+	margin-top: 3%;
+	color: #FFFACD;
+	background-color: #DAA520;
 
 }
+
 div.col1.ng-binding{
 	background:#DCECFC;
 	border-radius: 5%;
 	padding: inherit;
 	font-size: 35px;
-	margin-right: 1.5mm;
+	margin: 1%;
 }
 
 i.fa.fa-clock-o{
@@ -23,7 +34,7 @@ div.col2.ng-binding {
 	padding: inherit;
 	border-radius: 5%;
 	font-size: 35px;
-
+	margin: 1%;
 }
 
 i.fa.fa-road{
@@ -35,7 +46,7 @@ div.col3.ng-binding {
 	padding: inherit;
  	border-radius: 5%;
 	font-size: 35px;
-	margin-right: 1.5mm;
+	margin: 1%;
 }
 
 i.fa.fa-bicycle{
@@ -48,7 +59,7 @@ div.col4.ng-binding {
 	padding: inherit;
 	border-radius: 5%;
 	font-size: 35px;
-
+	margin:1%;
 }
 
 i.fa.fa-globe{
