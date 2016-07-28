@@ -9,6 +9,9 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/leaflet.css" rel="stylesheet">
     <link href="lib/ion-floating-menu/dist/ion-floating-menu.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
 
  <!--   <! IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -34,19 +37,26 @@
   </head>
 
   <body ng-app="starter" ng-controller="MapCtrl">
-    <ion-header-bar class="bar bar-header bar-assertive">
- 	  <h1 class="title">CycleDorf</h1>
-     </ion-header-bar>
     <ion-content scroll="false">
       <map on-create="mapCreated(map)"></map>
-      <div>
-        {{ timer }}<br>
-        {{ current_track_distance }}<br>
-        {{ firedb_tracks }}<br>
-        {{ firedb_time }}<br>
-        {{ firedb_driven }}<br>
-        <img ng-click="start()" src="./img/Button.png">{{ status }}
+      <div class = "row">
+        <div class = "col1">{{timer}}
+          <i class="fa fa-clock-o"></i>
+        </div>
+        <div class = "col2">{{current_track_distance}}
+          <i class="fa fa-road"></i>
+        </div>
       </div>
+      <div class = "row">
+        <div class = "col3">{{firedb_tracks}}
+          <i class="fa fa-bicycle"></i>
+        </div>
+        <div class = "col4">{{firedb_time}}
+          <i class="fa fa-globe"></i>
+        </div>
+      </div>
+      <button ng-click="start()">{{ status }}
+      </button>
     </ion-content>
   </body>
 </html>
